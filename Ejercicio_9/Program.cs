@@ -32,7 +32,21 @@ namespace Ejercicio_9
             Console.Title = "Ejercicio Nro. 9";
 
             Console.Write("Ingrese la altura de la piramide: ");
-            int.TryParse(Console.ReadLine(), out altura);
+
+            do
+            {
+                while (!int.TryParse(Console.ReadLine(), out altura))
+                {
+                    Console.Clear();
+                    Console.Write("ERROR!!! Ingrese la altura de la piramide: ");
+                }
+
+                if (altura <= 0)
+                {
+                    Console.Clear();
+                    Console.Write("ERROR!!! Ingrese la altura de la piramide: ");
+                }
+            } while (altura <= 0);
 
             for (int j = 0; j < altura; j++, Console.WriteLine())
             {
